@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="MavenProjectWizardArtifactPage">
+		<list key="groupId">
+		</list>
+		<list key="name">
+		</list>
+		<list key="artifactId">
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
+	<section name="org.eclipse.m2e.core.pom.dependencies">
+	</section>
+	<section name="org.eclipse.m2e.core.pom.overview">
+		<list key="ciManagementUrl">
+		</list>
+		<list key="ciManagementSystem">
+		</list>
+		<list key="issueManagementSystem">
+		</list>
+		<list key="issueManagementUrl">
+		</list>
+	</section>
+	<section name="org.eclipse.m2e.core.ui.internal.dialogs.MavenRepositorySearchDialog">
+		<item value="480" key="width"/>
+		<item value="443" key="x"/>
+		<item value="10" key="y"/>
+		<item value="531" key="height"/>
+	</section>
+	<section name="MavenProjectWizardArchetypePage">
+		<item value="All Catalogs" key="catalog"/>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="org.eclipse.m2e.core.ui.internal.wizards.CustomArchetypeDialog">
+	</section>
+	<section name="MavenProjectWizardLocationPage">
+		<list key="location">
+			<item value="D:\mySpring\SampleMavenSpringApplication"/>
+			<item value="D:\mySpring\SampleSpringApplication\SpringWebPersistApp"/>
+			<item value="D:\mySpring\SampleSpringApplication\SpringBootAOPModule"/>
+			<item value="D:\mySpring\SampleSpringApplication\Hibernate.HelloWorld"/>
+			<item value="D:\mySpring\SampleSpringApplication\SpringBoot.JavaScriptRestAPI\src\main\resources\templates\fileupload.html"/>
+			<item value="D:\mySpring\SampleSpringApplication\SpringBootJDBCAPI\src\main\java\com\spring\controller\SpringDaoController.java"/>
+			<item value="D:\mySpring\SampleSpringApplication\SpringWeb"/>
+			<item value="D:\mySpring\SampleSpringApplication\SpringBootStarter"/>
+			<item value="D:\mySpring\SampleSpringApplication"/>
+			<item value="D:\mySpring\SampleSpringApplication\SpringAnnotationWeb\src\main\java\com\spring\config\AppInitializer.java"/>
+			<item value="D:\mySpring\SampleSpringApplication\SpringPractise2\src\main\webapp\WEB-INF\secondcontroller-servlet.xml"/>
+			<item value="D:\mySpring\SampleSpringApplication\SpringWeb\src\com\spring\controller\FirstController.java"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="Maven2ProjectWizardArchifactPage">
+		<list key="package">
+			<item value="SpringBoot.SpringBootContentNegotiation"/>
+			<item value="SpringException.SpringExceptionHandling"/>
+			<item value="SpringSecurity.SpringSecurity.MVCapp"/>
+			<item value="SpringBootJPAH2.SpringBootJPAHibernateH2"/>
+			<item value="SpringBootJSP.JSPExample"/>
+			<item value="SpringHibernate.SpringHibernate.Integration"/>
+		</list>
+		<list key="groupId">
+			<item value="SpringBoot"/>
+			<item value="SpringException"/>
+			<item value="SpringSecurity"/>
+			<item value="SpringBootJPAH2"/>
+			<item value="SpringBootJSP"/>
+			<item value="SpringHibernate"/>
+		</list>
+		<list key="artifactId">
+			<item value="SpringBootContentNegotiation"/>
+			<item value="SpringExceptionHandling"/>
+			<item value="SpringSecurity.MVCapp"/>
+			<item value="SpringBootJPAHibernateH2"/>
+			<item value="JSPExample"/>
+			<item value="SpringHibernate.Integration"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
+</section>

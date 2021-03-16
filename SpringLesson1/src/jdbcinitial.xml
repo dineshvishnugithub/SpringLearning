@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:lang="http://www.springframework.org/schema/lang"
+	xmlns:jee="http://www.springframework.org/schema/jee"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd ">
+		
+	<aop:aspectj-autoproxy proxy-target-class="false"/>
+	    		
+	<bean id="ds" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+	   <property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"></property>
+	   <property name="url" value="jdbc:oracle:thin:@localhost:1521:xe"></property>
+	   <property name="username" value="hr"></property>
+	   <property name="password" value="hr1"></property>
+	</bean>
+	
+	<bean id="jdbctemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+	   <property name="dataSource" ref="ds"/>
+	</bean>
+	
+	<bean id="jdbcdao" class="com.spring.lesson.jdbc.JDBCAppDAO" autowire="byName"/>
+	
+	<bean id="decimal1" class="java.text.DecimalFormat">
+	    <constructor-arg value="##,###.##"/>
+	</bean>
+	
+	<bean id="sdf1" class="java.text.SimpleDateFormat">
+	    <constructor-arg value="dd/MM/yyyy"></constructor-arg>
+	</bean>
+	
+    <bean id="sdf2" class="java.text.SimpleDateFormat">
+	   <constructor-arg value="yyyy-MM-dd"/>
+	</bean>
+ 	
+	<bean id="jdbcpojo1" class="com.spring.lesson.jdbc.JDBCAppPOJO">
+	   <constructor-arg value="500" index="0"></constructor-arg>
+	   <constructor-arg value="Dinesh" index="1"></constructor-arg>
+	   <constructor-arg value="Vishnu" index="2"></constructor-arg>
+	   <constructor-arg value="d@k.com" index="3"></constructor-arg>
+	   <constructor-arg value="+6593557148" index="4"></constructor-arg>
+	   <constructor-arg index="5">
+           <bean class="java.sql.Date" factory-method="valueOf">
+               <constructor-arg>
+		           <bean factory-bean="sdf2" factory-method="format">
+		               <constructor-arg>
+				           <bean factory-bean="sdf1" factory-method="parse">
+				               <constructor-arg value="23/12/2020"/>
+				           </bean>
+			           </constructor-arg>
+		           </bean>
+		        </constructor-arg>
+		    </bean>
+	   </constructor-arg>
+	   <constructor-arg value="IT_PROG" index="6"></constructor-arg>
+	   <constructor-arg index="7">
+	     <bean factory-bean="decimal1" factory-method="parse">
+	        <constructor-arg value="45,345.67"></constructor-arg>
+	     </bean>
+	   </constructor-arg>
+	   <constructor-arg index="8">
+	     <bean factory-bean="decimal1" factory-method="parse">
+	        <constructor-arg value="0.15"></constructor-arg>
+	     </bean>
+	   </constructor-arg>
+	   <constructor-arg value="124" index="9"></constructor-arg>
+	   <constructor-arg value="50" index="10"></constructor-arg>
+	</bean>
+	
+	<bean id="jdbcpojo2" class="com.spring.lesson.jdbc.JDBCAppPOJO">
+	   <constructor-arg value="500" index="0"></constructor-arg>
+	   <constructor-arg value="Dinesh1" index="1"></constructor-arg>
+	   <constructor-arg value="Vishnu1" index="2"></constructor-arg>
+	</bean>
+	
+    <bean id="jdbcAspectAdvisors" class="com.spring.lesson.jdbc.JDBCAspect">
+    </bean>
+    
+	<bean id="jdbcdao1" class="com.spring.lesson.jdbc.JDBCAppDAOSupport">
+	   <property name="dataSource" ref="ds"/>
+	</bean>
+	
+	<bean id="jdbcpojo3" class="com.spring.lesson.jdbc.JDBCAppPOJO">
+	   <constructor-arg value="501" index="0"></constructor-arg>
+	   <constructor-arg value="Dinesh2" index="1"></constructor-arg>
+	   <constructor-arg value="Vishnu2" index="2"></constructor-arg>
+	   <constructor-arg value="d@k1.com" index="3"></constructor-arg>
+	   <constructor-arg value="+6593557148" index="4"></constructor-arg>
+	   <constructor-arg index="5">
+           <bean class="java.sql.Date" factory-method="valueOf">
+               <constructor-arg>
+		           <bean factory-bean="sdf2" factory-method="format">
+		               <constructor-arg>
+				           <bean factory-bean="sdf1" factory-method="parse">
+				               <constructor-arg value="3/1/2021"/>
+				           </bean>
+			           </constructor-arg>
+		           </bean>
+		        </constructor-arg>
+		    </bean>
+	   </constructor-arg>
+	   <constructor-arg value="IT_PROG" index="6"></constructor-arg>
+	   <constructor-arg index="7">
+	     <bean factory-bean="decimal1" factory-method="parse">
+	        <constructor-arg value="45,345.67"></constructor-arg>
+	     </bean>
+	   </constructor-arg>
+	   <constructor-arg index="8">
+	     <bean factory-bean="decimal1" factory-method="parse">
+	        <constructor-arg value="0.12"></constructor-arg>
+	     </bean>
+	   </constructor-arg>
+	   <constructor-arg value="124" index="9"></constructor-arg>
+	   <constructor-arg value="50" index="10"></constructor-arg>
+	</bean>
+	
+	<bean id="jdbcpojo4" class="com.spring.lesson.jdbc.JDBCAppPOJO">
+	   <constructor-arg value="500" index="0"></constructor-arg>
+	   <constructor-arg value="Dinesh2" index="1"></constructor-arg>
+	   <constructor-arg value="Vishnu2" index="2"></constructor-arg>
+	</bean>
+	
+    <bean id="jdbcpojo5" class="com.spring.lesson.jdbc.JDBCAppPOJO">
+	   <constructor-arg value="502" index="0"></constructor-arg>
+	   <constructor-arg value="Dinesh2" index="1"></constructor-arg>
+	   <constructor-arg value="Vishnu2" index="2"></constructor-arg>
+	   <constructor-arg value="d@k5.com" index="3"></constructor-arg>
+	   <constructor-arg value="+6593557148" index="4"></constructor-arg>
+	   <constructor-arg index="5">
+           <bean class="java.sql.Date" factory-method="valueOf">
+               <constructor-arg>
+		           <bean factory-bean="sdf2" factory-method="format">
+		               <constructor-arg>
+				           <bean factory-bean="sdf1" factory-method="parse">
+				               <constructor-arg value="4/1/2021"/>
+				           </bean>
+			           </constructor-arg>
+		           </bean>
+		        </constructor-arg>
+		    </bean>
+	   </constructor-arg>
+	   <constructor-arg value="IT_PROG" index="6"></constructor-arg>
+	   <constructor-arg index="7">
+	     <bean factory-bean="decimal1" factory-method="parse">
+	        <constructor-arg value="45,345.67"></constructor-arg>
+	     </bean>
+	   </constructor-arg>
+	   <constructor-arg index="8">
+	     <bean factory-bean="decimal1" factory-method="parse">
+	        <constructor-arg value="0.12"></constructor-arg>
+	     </bean>
+	   </constructor-arg>
+	   <constructor-arg value="124" index="9"></constructor-arg>
+	   <constructor-arg value="50" index="10"></constructor-arg>
+	</bean>
+	
+	<bean id="jdbcpojo6" class="com.spring.lesson.jdbc.JDBCAppPOJO">
+	   <constructor-arg value="503" index="0"></constructor-arg>
+	   <constructor-arg value="Dinesh2" index="1"></constructor-arg>
+	   <constructor-arg value="Vishnu2" index="2"></constructor-arg>
+	   <constructor-arg value="d@k6.com" index="3"></constructor-arg>
+	   <constructor-arg value="+6593557148" index="4"></constructor-arg>
+	   <constructor-arg index="5">
+           <bean class="java.sql.Date" factory-method="valueOf">
+               <constructor-arg>
+		           <bean factory-bean="sdf2" factory-method="format">
+		               <constructor-arg>
+				           <bean factory-bean="sdf1" factory-method="parse">
+				               <constructor-arg value="5/1/2021"/>
+				           </bean>
+			           </constructor-arg>
+		           </bean>
+		        </constructor-arg>
+		    </bean>
+	   </constructor-arg>
+	   <constructor-arg value="IT_PROG" index="6"></constructor-arg>
+	   <constructor-arg index="7">
+	     <bean factory-bean="decimal1" factory-method="parse">
+	        <constructor-arg value="45,345.67"></constructor-arg>
+	     </bean>
+	   </constructor-arg>
+	   <constructor-arg index="8">
+	     <bean factory-bean="decimal1" factory-method="parse">
+	        <constructor-arg value="0.12"></constructor-arg>
+	     </bean>
+	   </constructor-arg>
+	   <constructor-arg value="124" index="9"></constructor-arg>
+	   <constructor-arg value="50" index="10"></constructor-arg>
+	</bean>
+	
+	<bean id="jdbcpojo7" class="com.spring.lesson.jdbc.JDBCAppPOJO">
+	   <constructor-arg value="504" index="0"></constructor-arg>
+	   <constructor-arg value="Dinesh2" index="1"></constructor-arg>
+	   <constructor-arg value="Vishnu2" index="2"></constructor-arg>
+	   <constructor-arg value="d@k7.com" index="3"></constructor-arg>
+	   <constructor-arg value="+6593557148" index="4"></constructor-arg>
+	   <constructor-arg index="5">
+           <bean class="java.sql.Date" factory-method="valueOf">
+               <constructor-arg>
+		           <bean factory-bean="sdf2" factory-method="format">
+		               <constructor-arg>
+				           <bean factory-bean="sdf1" factory-method="parse">
+				               <constructor-arg value="6/1/2021"/>
+				           </bean>
+			           </constructor-arg>
+		           </bean>
+		        </constructor-arg>
+		    </bean>
+	   </constructor-arg>
+	   <constructor-arg value="IT_PROG" index="6"></constructor-arg>
+	   <constructor-arg index="7">
+	     <bean factory-bean="decimal1" factory-method="parse">
+	        <constructor-arg value="45,345.67"></constructor-arg>
+	     </bean>
+	   </constructor-arg>
+	   <constructor-arg index="8">
+	     <bean factory-bean="decimal1" factory-method="parse">
+	        <constructor-arg value="0.12"></constructor-arg>
+	     </bean>
+	   </constructor-arg>
+	   <constructor-arg value="124" index="9"></constructor-arg>
+	   <constructor-arg value="50" index="10"></constructor-arg>
+	</bean>
+	
+</beans>

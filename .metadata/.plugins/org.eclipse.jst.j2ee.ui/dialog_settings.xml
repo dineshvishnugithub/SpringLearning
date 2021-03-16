@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item value="true" key="J2EE_EXPORT_OVERWRITE"/>
+	<item value="false" key="J2EE_EXPORT_SOURCE"/>
+	<list key="MRU_RUNTIME_STORE">
+		<item value="Apache Tomcat v8.5"/>
+	</list>
+	<list key="J2EE_EXPORT_JST_WEB">
+		<item value="D:\Learning\Spring\jars\SpringException.war"/>
+		<item value="D:\Learning\Spring\jars\SpringSecurityApp.war"/>
+		<item value="D:\Learning\Spring\jars\SpringWebPersistApp.war"/>
+		<item value="D:\Learning\Spring\jars\SpringAnnotationWeb.war"/>
+		<item value="D:\Learning\Spring\jars\SpringPractisePart2.war"/>
+	</list>
+</section>

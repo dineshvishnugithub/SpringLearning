@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:lang="http://www.springframework.org/schema/lang"
+	xmlns:jee="http://www.springframework.org/schema/jee"
+	xsi:schemaLocation="http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang.xsd">
+               
+    <bean id="bean1" class="com.spring.lesson.course1.Student">
+        <property name="name" value="dinesh"/>
+    </bean>
+    
+    <bean id="bean2" class="com.spring.lesson.course1.Employee">
+        <constructor-arg value="dinesh" type="String"/>
+        <constructor-arg value="1" type="int"/>
+    </bean>
+    
+    <bean id="bean3" class="com.spring.lesson.course1.Employee">
+       <property name="name">
+          <value>dinesh</value>
+       </property>
+       <property name="id">
+       <value>5</value>
+       </property>
+    </bean>
+    
+    <bean id="bean4" class="com.spring.lesson.course1.Employee1">
+        <constructor-arg value="dinesh" type="String"/>
+        <constructor-arg value="1" type="int"/>
+        <constructor-arg>
+        <list>
+          <value>1</value>
+          <value>3</value>
+          <value>5</value>    
+        </list>
+        </constructor-arg>
+    </bean>
+</beans>

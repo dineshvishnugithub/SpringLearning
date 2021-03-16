@@ -1,0 +1,6 @@
+1610322256623	Move ' spring-mvcpersist.xml' to 'springConfigurator'
+1610329948706	Move ' spring-mvcpersist.xml' to 'WEB-INF'
+1610338890200	Rename resource ' spring-mvcpersist.xml'
+1610345171996	Rename resource ' spring-mvcpersist-servlet.xml'
+1610347894460	Move 'jdbc.xml' to 'java'
+1610404661520	Move 'jdbc.xml' to 'resources'

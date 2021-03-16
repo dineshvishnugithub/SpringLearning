@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;SpringExceptionHandling/src/main/webapp/WEB-INF/spring-exception-servlet.xml&apos; to &apos;springexception-servlet.xml&apos;" description="Rename resource &apos;spring-exception-servlet.xml&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/webapp/WEB-INF/spring-exception-servlet.xml" name="springexception-servlet.xml" stamp="1615515642452" updateReferences="true"/>
+</session>

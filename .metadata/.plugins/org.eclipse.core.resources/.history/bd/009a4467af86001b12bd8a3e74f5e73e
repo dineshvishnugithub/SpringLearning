@@ -1,0 +1,151 @@
+package com.spring.lesson.jdbc;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.sql.Blob;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.jdbc.datasource.DriverManagerDataSource;
+
+public class JDBCAppTester {
+
+	public static void main(String[] args) {
+		ApplicationContext objContext = new ClassPathXmlApplicationContext("jdbcinitial.xml");
+		DriverManagerDataSource objDataSource = (DriverManagerDataSource) objContext.getBean("ds");
+		System.out.println("objDataSource object :: "  + objDataSource);
+//		try {
+//			System.out.println("objDataSource connection :: "  + objDataSource.getConnection().toString());
+//		} catch (SQLException e) {
+//			e.printStackTrace();
+//		}
+		
+//		JDBCAppPOJO objPojo = (JDBCAppPOJO) objContext.getBean("jdbcpojo1");
+		JDBCAppDAO objJdbcDao = (JDBCAppDAO) objContext.getBean("jdbcdao");
+//		System.out.println("before insert");
+//		objJdbcDao.insert(objPojo);
+//		System.out.println("after insert");
+		
+		JDBCAppPOJO objPojo1 = (JDBCAppPOJO) objContext.getBean("jdbcpojo2");
+//		System.out.println("before update");
+//		objJdbcDao.update(objPojo1);
+//		System.out.println("after update");
+		
+//		System.out.println("before select");
+//		List<JDBCAppPOJO> obj = objJdbcDao.select();
+//		System.out.println("after select and size of list :: "+ obj.size());
+//		JDBCAppPOJO objJDBCAppPOJO = obj.get(0);
+//		System.out.println("objJDBCAppPOJO first name :: " + objJDBCAppPOJO.getFirstName());
+//		System.out.println(" ");
+		
+//		System.out.println("before selectResultSetExtractor");
+//		List<JDBCAppPOJO> obj1 = objJdbcDao.selectResultSetExtractor();
+//		System.out.println("after selectResultSetExtractor and size of list :: "+ obj1.size());
+//		JDBCAppPOJO objJDBCAppPOJO1 = obj.get(0);
+//		System.out.println("objJDBCAppPOJO1 first name :: " + objJDBCAppPOJO1.getFirstName());
+		
+//		System.out.println("before executeQuery for select pointcut testing");
+//		List<JDBCAppPOJO> obj = objJdbcDao.executeQuery("Select * from employees where employee_id between ? and ?");
+//		System.out.println("after executeQuery for select pointcut testing and size of list :: "+ obj.size());
+//		System.out.println(" ");
+//		
+//		System.out.println("before executeQuery for update/insert pointcut testing");
+//		int obj1 = objJdbcDao.executeQuery("update employees set FIRST_NAME=?, LAST_NAME=? where EMPLOYEE_ID=?", objPojo1);
+//		System.out.println("after executeQuery for update/insert pointcut testing and statust :: "+ obj1);
+		
+//		JDBCAppPOJO objPojo5 = (JDBCAppPOJO) objContext.getBean("jdbcpojo5");
+//		JDBCAppPOJO objPojo6 = (JDBCAppPOJO) objContext.getBean("jdbcpojo6");
+//		JDBCAppPOJO objPojo7 = (JDBCAppPOJO) objContext.getBean("jdbcpojo7");
+//		List<JDBCAppPOJO> objJDBCAppPOJO = new ArrayList<JDBCAppPOJO>();
+//		objJDBCAppPOJO.add(objPojo5);
+//		objJDBCAppPOJO.add(objPojo6);
+//		objJDBCAppPOJO.add(objPojo7);
+//		System.out.println("before insert batch");
+//		int[] status = objJdbcDao.insertBatch(objJDBCAppPOJO);
+//		System.out.println("after insert batch status:: "  + status[0] + "," + status[1] + "," + status[2] + ".");
+		
+		//using daosupport class
+//		JDBCAppPOJO objPojo3 = (JDBCAppPOJO) objContext.getBean("jdbcpojo3");
+//		JDBCAppDAOSupport objJdbcDao1 = (JDBCAppDAOSupport) objContext.getBean("jdbcdao1");
+//		System.out.println("daosupport:: before insert");
+//		objJdbcDao1.insert(objPojo3);
+//		System.out.println("daosupport:: after insert");
+//		
+//		JDBCAppPOJO objPojo4 = (JDBCAppPOJO) objContext.getBean("jdbcpojo4");
+//		System.out.println("daosupport:: before update");
+//		objJdbcDao1.update(objPojo4);
+//		System.out.println("daosupport:: after update");
+		
+//		System.out.println("daosupport:: before select");
+//		List<JDBCAppPOJO> obj = objJdbcDao1.select();
+//		System.out.println("daosupport:: after select and size of list :: "+ obj.size());
+//		JDBCAppPOJO objJDBCAppPOJO = obj.get(0);
+//		System.out.println("daosupport:: objJDBCAppPOJO first name :: " + objJDBCAppPOJO.getFirstName());
+//		System.out.println(" ");
+//		
+//		System.out.println("daosupport:: before selectResultSetExtractor");
+//		List<JDBCAppPOJO> obj1 = objJdbcDao1.selectResultSetExtractor();
+//		System.out.println("daosupport:: after selectResultSetExtractor and size of list :: "+ obj1.size());
+//		JDBCAppPOJO objJDBCAppPOJO1 = obj.get(0);
+//		System.out.println("daosupport:: objJDBCAppPOJO1 first name :: " + objJDBCAppPOJO1.getFirstName());
+		
+		//insert blob object
+//		System.out.println("daosupport:: before insert blob");
+//		String filename = "20201130-006993.pdf";
+//		String filename1 = "20201130-006993";
+		
+//		String filename = "APAY2.20181204BC20001.TXT.ZIP.P7";
+//		String filename1 = "APAY2.20181204BC20001.TXT.ZIP";
+		
+//		String filename = "EHQ_Coll_201802.txt";
+//		String filename1 = "EHQ_Coll_201802";
+		String filename1 = "email";
+		FileInputStream fin;
+		try {
+			//write pdf to db 
+//			fin = new FileInputStream("C:\\Users\\dineshvkc-v\\Downloads\\"+filename);
+			Connection objConn = objDataSource.getConnection();
+//			PreparedStatement ps = objConn.prepareStatement("Insert into test_blob_content(file_name,blob_content) values(?,?)");
+//			ps.setString(1, filename);
+//			ps.setBlob(2, fin);
+//			int statusCode = ps.executeUpdate();
+//			System.out.println("statusCode is :: " + statusCode);
+//			
+//			//write blob to pdf
+			PreparedStatement ps = objConn.prepareStatement("select file_name, blob_content from test_blob_content where file_name ='TestName'");
+		      ResultSet rs = ps.executeQuery();
+		      int i = 1;
+		      System.out.println("Contents of the table are: ");
+		      while(rs.next()) {
+		         System.out.println(rs.getString("file_name"));
+		         Blob blob = rs.getBlob("blob_content");
+		         byte byteArray[] = blob.getBytes(1,(int)blob.length());
+//		         FileOutputStream outPutStream = new FileOutputStream("C:\\Users\\dineshvkc-v\\Downloads\\"+filename1 + "_" +i+".pdf");
+		         FileOutputStream outPutStream = new FileOutputStream("C:\\Users\\dineshvkc-v\\Downloads\\"+filename1 + "_" +i+".properties");
+		         outPutStream.write(byteArray);
+//		         System.out.println("C:\\Users\\dineshvkc-v\\Downloads\\"+filename1 + "_" +i+".pdf");
+		         System.out.println("C:\\Users\\dineshvkc-v\\Downloads\\"+filename1 + "_" +i+".txt");
+		         System.out.println();
+		         i++;
+		      }
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		System.out.println("daosupport:: after insert blob");
+	}
+}

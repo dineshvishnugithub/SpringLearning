@@ -1,0 +1,24 @@
+package com.spring.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.spring.exception.SpringException;
+
+@Controller
+public class CustomController {
+
+	@RequestMapping(value="/handler", method=RequestMethod.GET)
+	public String goToExceptionChecker(@RequestParam("one") String one, ModelMap objModel) {
+		System.out.println("Inside CustomController::goToExceptionChecker one:: " + one);
+		if("one".equals(one)) {
+			throw new SpringException("Request Param is wrong");
+		}
+			
+		return "first";
+	}
+
+}

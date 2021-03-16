@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:lang="http://www.springframework.org/schema/lang"
+	xmlns:jee="http://www.springframework.org/schema/jee"
+	xsi:schemaLocation="http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang.xsd">
+		
+<bean id="constructoreg1_1" class="com.spring.lesson.constructor.injection.PersonCharacterisitics">
+    <property name="color" value="black"></property>
+    <property name="race" value="Tamil"></property>
+    <property name="height" value="177"></property>
+    <property name="weight" value="86.5"></property>
+</bean>
+		
+<bean id="constructoreg1" class="com.spring.lesson.constructor.injection.Person">
+    <property name="name" value="Dinesh"></property>
+    <property name="age" value="30"></property>
+    <property name="objPersonCharacterisitics" ref="constructoreg1_1"/>
+</bean>
+
+<bean id="constructoreg2" class="com.spring.lesson.constructor.injection.Person">
+    <constructor-arg value="Dinesh"/>
+    <constructor-arg value="30"/>
+    <constructor-arg ref="constructoreg1_1"/>
+</bean>
+
+<bean id="constructoreg3" class="com.spring.lesson.constructor.injection.Person">
+    <constructor-arg ref="constructoreg1_1"/>
+</bean>
+
+<bean id="constructoreg4" class="com.spring.lesson.constructor.injection.Person">
+    <constructor-arg value="Dinesh"/>
+</bean>
+
+<bean id="constructoreg5" class="com.spring.lesson.constructor.injection.Person">
+    <constructor-arg value="30" type="int"/>
+</bean>
+
+<bean id="constructoreg6" class="com.spring.lesson.constructor.injection.Person">
+    <constructor-arg value="30" index="1"/>
+    <constructor-arg value="Dinesh"/>
+</bean>
+
+<bean id="constructoreg7" class="com.spring.lesson.constructor.injection.Person">
+    <constructor-arg value="30" type="int"/>
+    <constructor-arg value="Dinesh"/>
+</bean>
+
+</beans>

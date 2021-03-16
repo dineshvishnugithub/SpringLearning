@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2020-12-27T22:29:58</date>
+  <millis>1609079398471</millis>
+  <sequence>3</sequence>
+  <logger>com.spring.lesson.jdbc</logger>
+  <level>INFO</level>
+  <class>com.spring.lesson.jdbc.JDBCAspect</class>
+  <method>logAroundResults</method>
+  <thread>1</thread>
+  <message>Advice2: Inside around(after): logAroundResults:: 6</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2020-12-27T22:33:07</date>
+  <millis>1609079587638</millis>
+  <sequence>3</sequence>
+  <logger>com.spring.lesson.jdbc</logger>
+  <level>INFO</level>
+  <class>com.spring.lesson.jdbc.JDBCAspect</class>
+  <method>logBeforeQuery</method>
+  <thread>1</thread>
+  <message>Advice1: Inside before: logQuery:: Select * from employees where employee_id between ? and ?</message>
+</record>
+<record>
+  <date>2020-12-27T22:33:10</date>
+  <millis>1609079590462</millis>
+  <sequence>4</sequence>
+  <logger>com.spring.lesson.jdbc</logger>
+  <level>INFO</level>
+  <class>com.spring.lesson.jdbc.JDBCAspect</class>
+  <method>logAroundResults</method>
+  <thread>1</thread>
+  <message>Advice2: Inside around(after): logAroundResults:: 6</message>
+</record>
+<record>
+  <date>2020-12-27T22:33:10</date>
+  <millis>1609079590479</millis>
+  <sequence>5</sequence>
+  <logger>com.spring.lesson.jdbc</logger>
+  <level>INFO</level>
+  <class>com.spring.lesson.jdbc.JDBCAspect</class>
+  <method>addPointcut_Update</method>
+  <thread>1</thread>
+  <message>Advice3: Inside before: logQuery:: update employees set FIRST_NAME=?, LAST_NAME=? where EMPLOYEE_ID=?</message>
+</record>
+<record>
+  <date>2020-12-27T22:33:10</date>
+  <millis>1609079590876</millis>
+  <sequence>6</sequence>
+  <logger>com.spring.lesson.jdbc</logger>
+  <level>INFO</level>
+  <class>com.spring.lesson.jdbc.JDBCAspect</class>
+  <method>logAroundResultsUpdate</method>
+  <thread>1</thread>
+  <message>Advice4: Inside around(after): logAroundResultsUpdate:: 1</message>
+</record>
+</log>
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2021-01-04T10:11:55</date>
+  <millis>1609726315598</millis>
+  <sequence>3</sequence>
+  <logger>com.spring.lesson.jdbc</logger>
+  <level>INFO</level>
+  <class>com.spring.lesson.jdbc.JDBCAspect</class>
+  <method>logBeforeQuery</method>
+  <thread>1</thread>
+  <message>Advice1: Inside before: logQuery:: Select * from employees where employee_id between ? and ?</message>
+</record>
+<record>
+  <date>2021-01-04T10:11:57</date>
+  <millis>1609726317974</millis>
+  <sequence>4</sequence>
+  <logger>com.spring.lesson.jdbc</logger>
+  <level>INFO</level>
+  <class>com.spring.lesson.jdbc.JDBCAspect</class>
+  <method>logAroundResults</method>
+  <thread>1</thread>
+  <message>Advice2: Inside around(after): logAroundResults:: 6</message>
+</record>
+<record>
+  <date>2021-01-04T10:11:57</date>
+  <millis>1609726317996</millis>
+  <sequence>5</sequence>
+  <logger>com.spring.lesson.jdbc</logger>
+  <level>INFO</level>
+  <class>com.spring.lesson.jdbc.JDBCAspect</class>
+  <method>addPointcut_Update</method>
+  <thread>1</thread>
+  <message>Advice3: Inside before: logQuery:: update employees set FIRST_NAME=?, LAST_NAME=? where EMPLOYEE_ID=?</message>
+</record>
+<record>
+  <date>2021-01-04T10:11:58</date>
+  <millis>1609726318425</millis>
+  <sequence>6</sequence>
+  <logger>com.spring.lesson.jdbc</logger>
+  <level>INFO</level>
+  <class>com.spring.lesson.jdbc.JDBCAspect</class>
+  <method>logAroundResultsUpdate</method>
+  <thread>1</thread>
+  <message>Advice4: Inside around(after): logAroundResultsUpdate:: 1</message>
+</record>
+</log>

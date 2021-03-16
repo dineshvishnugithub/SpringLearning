@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="D:/Learning/Spring/jars/spring-beans-4.3.2.RELEASE.jar"/>
+	<classpathentry kind="lib" path="D:/Learning/Spring/jars/spring-core-4.3.2.RELEASE.jar"/>
+	<classpathentry kind="lib" path="D:/Learning/Spring/jars/commons-logging-1.1.1-api.jar"/>
+	<classpathentry kind="lib" path="D:/Learning/Spring/jars/spring-context-4.3.2.RELEASE.jar"/>
+	<classpathentry kind="lib" path="D:/Learning/Spring/jars/spring-expression-4.3.2.RELEASE.jar"/>
+	<classpathentry kind="lib" path="D:/Learning/Spring/jars/spring-aop-4.3.2.RELEASE.jar"/>
+	<classpathentry kind="lib" path="D:/Learning/Spring/jars/spring-aspects-4.3.2.RELEASE.jar"/>
+	<classpathentry kind="lib" path="D:/Learning/Spring/jars/aopalliance-1.0.jar"/>
+	<classpathentry kind="lib" path="D:/Learning/Spring/jars/aspectjrt-1.9.6.jar"/>
+	<classpathentry kind="lib" path="D:/Learning/Spring/jars/aspectjweaver-1.9.6.jar"/>
+	<classpathentry kind="lib" path="D:/Learning/Spring/jars/cglib-3.3.0.jar"/>
+	<classpathentry kind="lib" path="D:/Learning/Spring/jars/ojdbc6-11.2.0.2.0.jar"/>
+	<classpathentry kind="lib" path="D:/Learning/Spring/jars/spring-jdbc-4.3.2.RELEASE.jar"/>
+	<classpathentry kind="lib" path="D:/Learning/Spring/jars/spring-tx-4.3.2.RELEASE.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

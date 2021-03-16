@@ -1,0 +1,9 @@
+package com.spring.controller;
+
+public class CustomController {
+
+	public CustomController() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

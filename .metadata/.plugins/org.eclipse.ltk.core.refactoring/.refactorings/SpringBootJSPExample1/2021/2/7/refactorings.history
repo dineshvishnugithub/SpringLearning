@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move element &apos;SpringBootWebApplication.java&apos; to &apos;SpringBootJSPExample1/src/main/java/com.spring.controller&apos;&#x0D;&#x0A;- Original project: &apos;SpringBootJSPExample1&apos;&#x0D;&#x0A;- Destination element: &apos;SpringBootJSPExample1/src/main/java/com.spring.controller&apos;&#x0D;&#x0A;- Original element: &apos;SpringBootWebApplication.java&apos;&#x0D;&#x0A;- Update references to refactored element" description="Move compilation unit" destination="/src\/main\/java&lt;com.spring.controller" element1="/src\/main\/java&lt;{SpringBootWebApplication.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" log="/src\/main\/java&#x09;/src\/main\/java&lt;com.spring.controller" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1612835759914" units="1" version="1.0"/>
+</session>

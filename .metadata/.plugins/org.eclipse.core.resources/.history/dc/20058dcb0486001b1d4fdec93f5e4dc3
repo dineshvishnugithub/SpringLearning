@@ -1,0 +1,22 @@
+package com.spring.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import com.spring.employee.Employee;
+
+@Controller
+public class CustomController {
+   
+	@RequestMapping(value="/getEmpDetails", consumes="application/xml", produces="application/xml", method=RequestMethod.GET)
+	public ResponseEntity<Employee> getEmployees(){
+		Employee objEmployee = new Employee();
+		objEmployee.setEmpId(101);
+		objEmployee.setName("Dinesh");
+		objEmployee.setOrgName("Crimsonlogic");
+		
+		return new ResponseEntity<Employee>(objEmployee, HttpStatus.ACCEPTED);
+	}
+}

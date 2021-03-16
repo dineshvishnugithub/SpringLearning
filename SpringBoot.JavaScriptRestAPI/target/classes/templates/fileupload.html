@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+    <title>Getting Started: File upload</title> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+        function submitfile(){
+    	  alert('hi');
+        /** var productmodel = {
+            id : "3",
+            name : "Ginger"
+         }; */
+         var name = document.getElementById('name').value;
+         var file = document.getElementById('file').files[0];
+         alert(name);
+         alert(file);
+         if (file) {
+        	    var reader = new FileReader();
+        	    reader.readAsText(file, "UTF-8");
+        	    alert(reader);
+        	}
+         //var productmodel = {
+         //id : name,
+         //name : filename
+         //};
+         //var requestJSON = JSON.stringify(productmodel);
+         //var file = document.getElementById('file').value;
+         //var filename = $("#file");
+         //alert(filename);
+         $.ajax({
+            type : "POST",
+            url : "http://localhost:8084/fileuploadPost",
+            headers : {
+               "Content-Type" : "application/json"
+               //"Content-Type" : "application/octet-stream"
+            },
+            data: { name: $("#name").val(), filename : $("#file")} ,
+            //data : productmodel,
+            //data : file,
+            success : function(data) {
+               alert(data);
+            },
+            error : function(data) {
+            }
+         });
+   }
+        
+        async function uploadFile() {
+            let formData = new FormData();
+            formData.append("name", document.getElementById("name").value);
+            formData.append("file", file.files[0]);
+            await fetch('http://localhost:8084/fileuploadPost4', {
+              method: "POST", 
+              body: formData
+            });    
+            alert('The file has been uploaded successfully.');
+        }
+</script>
+</head>
+<body>
+    <p th:text="'Hello, ' + ${name} + '!'" /> 
+    
+    <div>
+       <form enctype="multipart/form-data" action="/">
+			<table>
+			    <tr><td>Employee name:</td><td><input type="text" name="name" id="name" value=""/></td></tr>
+				<tr><td>File to upload:</td><td><input type="file" name="file" id="file" value="" /></td></tr>
+				<tr><td></td><td><input type="submit" value="Upload" onclick="uploadFile()"/></td></tr>
+			</table>
+		</form>
+	</div>   
+</body>
+</html>

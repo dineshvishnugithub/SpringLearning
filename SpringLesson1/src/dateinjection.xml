@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:lang="http://www.springframework.org/schema/lang"
+	xmlns:jee="http://www.springframework.org/schema/jee"
+	xsi:schemaLocation="http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang.xsd">
+		
+	<bean id="sdf" class="java.text.SimpleDateFormat">
+	   <constructor-arg value="dd-MM-yyyy"/>
+	</bean>
+               
+    <bean id="bean1" class="com.spring.lesson.date.CustomerDate">
+        <property name="objDate">
+           <bean factory-bean="sdf" factory-method="parse">
+               <constructor-arg value="14-12-2020"/>
+           </bean>
+        </property>
+    </bean>
+    
+    <bean id="sdf1" class="java.text.SimpleDateFormat">
+	   <constructor-arg value="yyyy/MM/dd"/>
+	</bean>
+	
+	<bean id="bean2" class="com.spring.lesson.date.CustomerDate">
+        <property name="objDate">
+           <bean factory-bean="sdf1" factory-method="parse">
+               <constructor-arg value="2031/12/11"/>
+           </bean>
+        </property>
+    </bean>
+     
+	<bean id="decimalFormat" class="java.text.DecimalFormat">
+	   <constructor-arg value="#,###.####"/>
+	</bean>
+	
+	<bean id="bean3" class="com.spring.lesson.date.CustomerDate">
+      <property name="objSalary">
+         <bean factory-bean="decimalFormat" factory-method="parse">
+             <constructor-arg value="4,500.89"></constructor-arg>
+         </bean>
+      </property>
+    </bean>
+    
+    <bean id="bean4" class="com.spring.lesson.date.CustomerDate">
+        <property name="objStringDate">
+           <bean factory-bean="sdf1" factory-method="format">
+               <constructor-arg>
+		           <bean factory-bean="sdf1" factory-method="parse">
+		               <constructor-arg value="2031/12/11"/>
+		           </bean>
+	           </constructor-arg>
+           </bean>
+        </property>
+    </bean>
+    
+    <bean id="sdf2" class="java.text.SimpleDateFormat">
+	   <constructor-arg value="yyyy-MM-dd"/>
+	</bean>
+    
+   <!--  <bean id="sdf3" class="java.util.Date">
+	   <constructor-arg value="00000000000000000"/>
+	</bean> -->
+    
+    <bean id="bean5" class="com.spring.lesson.date.CustomerDate">
+        <property name="objSqlDate">
+           <bean class="java.sql.Date" factory-method="valueOf">
+               <constructor-arg>
+		           <bean factory-bean="sdf2" factory-method="format">
+		               <constructor-arg>
+				           <bean factory-bean="sdf1" factory-method="parse">
+				               <constructor-arg value="2031/12/11"/>
+				           </bean>
+			           </constructor-arg>
+		           </bean>
+		        </constructor-arg>
+		    </bean>
+        </property>
+    </bean>
+    
+    <bean id="sdf4" class="java.sql.Date">
+	   <constructor-arg value="00000000000000000"/>
+	</bean>
+    
+   <!-- <bean id="bean6" class="com.spring.lesson.date.CustomerDate">
+        <property name="objSqlDate">
+           <bean class="java.sql.Date" factory-method="setTime">
+               <constructor-arg>
+				           <bean factory-bean="sdf1" factory-method="parse">
+				               <constructor-arg value="2031/12/11"/>
+				           </bean>
+	           </constructor-arg>
+           </bean>
+        </property>
+    </bean> -->
+	
+</beans>
